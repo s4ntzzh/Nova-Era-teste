@@ -1,0 +1,791 @@
+  <!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nova Era</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+    }
+  </style>
+</head>
+<body class="bg-slate-950 text-slate-100 font-sans antialiased selection:bg-cyan-500 selection:text-slate-950">
+
+  <header class="sticky top-0 z-50 bg-slate-950/85 backdrop-blur-md border-b border-purple-900/40">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-20">
+
+        <a href="#" class="flex items-center space-x-3" onclick="return false;">
+          <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-purple-600 via-indigo-600 to-cyan-400 flex items-center justify-center shadow-lg shadow-cyan-500/20 ring-1 ring-cyan-400/40">
+            <i data-lucide="zap" class="w-6 h-6 text-white"></i>
+          </div>
+          <div class="flex items-center">
+            <span class="text-2xl font-black tracking-wider bg-clip-text text-transparent bg-gradient-to-r from-purple-400 via-indigo-300 to-cyan-400">
+              Nova Era
+            </span>
+          </div>
+        </a>
+
+        <nav class="hidden md:flex items-center space-x-8 text-sm font-semibold text-slate-300">
+          <a href="#sobre" class="hover:text-cyan-400 transition-colors">Sobre Nós</a>
+          <a href="#propostas" class="hover:text-cyan-400 transition-colors">Propostas</a>
+          <a href="#membros" class="hover:text-cyan-400 transition-colors">Nosso Time</a>
+          <a href="#cronograma" class="hover:text-cyan-400 transition-colors">Agenda</a>
+          <a href="#ouvidoria" class="hover:text-cyan-400 transition-colors">Fala Estudante</a>
+        </nav>
+
+        <div class="hidden md:flex items-center space-x-3">
+          <a href="https://www.instagram.com/nve.2026/" target="_blank" rel="noreferrer" class="p-2 rounded-xl bg-slate-900 border border-purple-900/40 hover:border-cyan-400/50 text-cyan-400 transition-all hover:scale-105" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5" aria-hidden="true">
+              <rect x="2" y="2" width="20" height="20" rx="5"></rect>
+              <circle cx="12" cy="12" r="4"></circle>
+              <circle cx="17.5" cy="6.5" r="1"></circle>
+            </svg>
+          </a>
+          <a href="#ouvidoria" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl font-bold bg-gradient-to-r from-purple-600 via-indigo-600 to-cyan-500 hover:from-purple-500 hover:to-cyan-400 text-white shadow-lg shadow-cyan-500/20 transition-all hover:shadow-cyan-500/40 hover:-translate-y-0.5 border border-cyan-400/30">
+            <span>Fala Estudante</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4" aria-hidden="true">
+              <rect x="2" y="2" width="20" height="20" rx="5"></rect>
+              <circle cx="12" cy="12" r="4"></circle>
+              <circle cx="17.5" cy="6.5" r="1"></circle>
+            </svg>
+          </a>
+        </div>
+
+        <div class="md:hidden">
+          <button id="mobile-menu-btn" class="p-2 rounded-lg bg-slate-900 border border-slate-800 text-slate-300 hover:text-cyan-400">
+            <i data-lucide="menu" id="menu-icon-open" class="w-6 h-6"></i>
+            <i data-lucide="x" id="menu-icon-close" class="w-6 h-6 hidden"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div id="mobile-menu" class="hidden md:hidden bg-slate-950 border-b border-purple-900/40 px-4 pt-2 pb-6 space-y-3">
+      <a href="#sobre" class="mobile-link block py-2 text-slate-300 hover:text-cyan-400 font-medium">Sobre Nós</a>
+      <a href="#propostas" class="mobile-link block py-2 text-slate-300 hover:text-cyan-400 font-medium">Propostas</a>
+      <a href="#membros" class="mobile-link block py-2 text-slate-300 hover:text-cyan-400 font-medium">Nosso Time</a>
+      <a href="#cronograma" class="mobile-link block py-2 text-slate-300 hover:text-cyan-400 font-medium">Agenda</a>
+      <a href="#ouvidoria" class="mobile-link block py-2 text-slate-300 hover:text-cyan-400 font-medium">Fala Estudante</a>
+      <div class="pt-2 flex items-center justify-between">
+        <a href="https://www.instagram.com/nve.2026/" target="_blank" rel="noreferrer" class="flex items-center space-x-2 text-cyan-400 font-medium text-sm">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5" aria-hidden="true">
+            <rect x="2" y="2" width="20" height="20" rx="5"></rect>
+            <circle cx="12" cy="12" r="4"></circle>
+            <circle cx="17.5" cy="6.5" r="1"></circle>
+          </svg>
+          <span>@nve.2026</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <section class="relative overflow-hidden py-24 lg:py-32 bg-gradient-to-b from-slate-950 via-purple-950/30 to-slate-950">
+    <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[350px] bg-cyan-500/15 blur-[140px] rounded-full pointer-events-none"></div>
+    <div class="absolute top-1/3 right-10 w-[350px] h-[350px] bg-purple-600/20 blur-[120px] rounded-full pointer-events-none"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="text-center max-w-3xl mx-auto">
+
+        <div class="inline-flex items-center space-x-2 px-4 py-2 rounded-full bg-purple-950/60 border border-cyan-400/30 text-cyan-300 text-xs sm:text-sm font-semibold mb-6 animate-pulse shadow-md shadow-cyan-500/10">
+          <i data-lucide="rocket" class="w-4 h-4 text-cyan-400"></i>
+          <span>Chapa Nova Era • Renovação e Futuro</span>
+        </div>
+
+        <h1 class="text-4xl sm:text-6xl font-black tracking-tight text-white leading-tight mb-6">
+          Construindo o futuro da nossa escola <span class="bg-clip-text text-transparent bg-gradient-to-r from-purple-400 via-indigo-300 to-cyan-400">hoje!</span>
+        </h1>
+
+        <p class="text-lg sm:text-xl text-slate-300 mb-10 leading-relaxed font-light">
+          Chegou a hora de transformar o Grêmio em uma plataforma ativa, moderna, digital e conectada com cada estudante. Tecnologia, voz ativa, cultura e esporte de verdade.
+        </p>
+
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+          <a href="#propostas" class="w-full sm:w-auto px-8 py-4 rounded-xl font-bold bg-gradient-to-r from-purple-600 via-indigo-600 to-cyan-400 hover:opacity-95 text-white shadow-xl shadow-cyan-500/20 transition-all hover:scale-105 flex items-center justify-center space-x-2 border border-cyan-400/30">
+            <span>Conheça Nossas Propostas</span>
+            <i data-lucide="chevron-right" class="w-5 h-5"></i>
+          </a>
+          <a href="#ouvidoria" class="w-full sm:w-auto px-8 py-4 rounded-xl font-bold bg-slate-900 hover:bg-slate-850 text-slate-200 border border-purple-900/50 transition-all flex items-center justify-center space-x-2 hover:border-cyan-400/40">
+            <i data-lucide="radio" class="w-5 h-5 text-cyan-400"></i>
+            <span>Fala Estudante</span>
+          </a>
+        </div>
+
+        <div class="mt-16 grid grid-cols-2 md:grid-cols-4 gap-6 pt-10 border-t border-purple-900/30">
+          <div class="p-5 rounded-2xl bg-slate-900/60 border border-purple-900/30 shadow-inner">
+            <div class="text-3xl font-black text-cyan-400">11</div>
+            <div class="text-xs text-slate-400 font-medium mt-1">Propostas Inovadoras</div>
+          </div>
+          <div class="p-5 rounded-2xl bg-slate-900/60 border border-purple-900/30 shadow-inner">
+            <div class="text-3xl font-black text-purple-400">100%</div>
+            <div class="text-xs text-slate-400 font-medium mt-1">Transparência Digital</div>
+          </div>
+          <div class="p-5 rounded-2xl bg-slate-900/60 border border-purple-900/30 shadow-inner">
+            <div class="text-3xl font-black text-cyan-400">24/7</div>
+            <div class="text-xs text-slate-400 font-medium mt-1">Voz Estudantil</div>
+          </div>
+          <div class="p-5 rounded-2xl bg-slate-900/60 border border-purple-900/30 shadow-inner">
+            <div class="text-3xl font-black text-purple-400">1ª</div>
+            <div class="text-xs text-slate-400 font-medium mt-1">Revolução Escolar</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="sobre" class="py-20 bg-slate-950">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
+        <div>
+          <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-400/30 text-cyan-300 text-xs font-semibold mb-4">
+            <i data-lucide="sparkles" class="w-4 h-4"></i>
+            <span>Quem Somos</span>
+          </div>
+          <h2 class="text-3xl sm:text-4xl font-black text-white mb-6">
+            A <span class="text-cyan-400">Nova Era</span> nasceu para ouvir e agir
+          </h2>
+          <p class="text-slate-300 text-lg leading-relaxed mb-6">
+            Somos uma chapa construída por estudantes que entendem que o Grêmio não pode ser só um cargo de representação: ele precisa ser uma ponte entre a escola, os alunos e o futuro.
+          </p>
+          <p class="text-slate-400 leading-relaxed mb-8">
+            Nosso compromisso é trazer inovação, estrutura, estudantes mais conectados e uma gestão com foco real nas necessidades do cotidiano escolar. Queremos transformar o ambiente acadêmico em um espaço mais acolhedor, moderno e participativo.
+          </p>
+
+          <div class="space-y-4">
+            <div class="flex items-start space-x-3 p-4 rounded-2xl bg-slate-900/70 border border-slate-800">
+              <div class="p-2 rounded-xl bg-cyan-500/10 text-cyan-400">
+                <i data-lucide="message-square-text" class="w-5 h-5"></i>
+              </div>
+              <div>
+                <h3 class="font-bold text-white">Voz ativa dos estudantes</h3>
+                <p class="text-sm text-slate-400">Ouvir o que cada turma sente e transformar isso em ações concretas cada semana.</p>
+              </div>
+            </div>
+
+            <div class="flex items-start space-x-3 p-4 rounded-2xl bg-slate-900/70 border border-slate-800">
+              <div class="p-2 rounded-xl bg-purple-500/10 text-purple-400">
+                <i data-lucide="shield-check" class="w-5 h-5"></i>
+              </div>
+              <div>
+                <h3 class="font-bold text-white">Transparência e responsabilidade</h3>
+                <p class="text-sm text-slate-400">Relatórios claros, divulgação de decisões e atuação com responsabilidade junto à comunidade.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="relative">
+          <div class="rounded-3xl p-4 border border-purple-900/40 bg-gradient-to-br from-slate-900 via-slate-950 to-purple-950/40 shadow-2xl shadow-cyan-500/10">
+            <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&q=80&w=1200" alt="Estudantes em reunião" class="w-full h-[540px] object-cover rounded-2xl border border-slate-800" />
+          </div>
+          <div class="absolute -bottom-6 -left-6 p-5 rounded-2xl bg-slate-900 border border-cyan-400/30 shadow-xl shadow-cyan-500/10 max-w-xs">
+            <div class="flex items-center space-x-3 mb-2">
+              <div class="p-2 rounded-xl bg-cyan-500/10 text-cyan-400">
+                <i data-lucide="trending-up" class="w-5 h-5"></i>
+              </div>
+              <div>
+                <div class="text-2xl font-black text-white">+18%</div>
+                <div class="text-[10px] uppercase tracking-wider text-slate-400">engajamento</div>
+              </div>
+            </div>
+            <p class="text-xs text-slate-300 leading-relaxed">Nossa visão é criar uma escola mais conectada, participativa e inspirada para o futuro.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="propostas" class="py-20 bg-slate-950 border-t border-purple-900/20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-2xl mx-auto mb-12">
+        <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-purple-500/10 border border-purple-400/30 text-purple-400 text-xs font-semibold mb-3">
+          <i data-lucide="rocket" class="w-4 h-4"></i>
+          <span>Propostas de Ação</span>
+        </div>
+        <h2 class="text-3xl sm:text-4xl font-black text-white mb-4">O que a <span class="text-purple-400">Nova Era</span> vai transformar</h2>
+        <p class="text-slate-400 text-sm">Ações para fortalecer a convivência, a estrutura e as oportunidades na escola.</p>
+      </div>
+
+      <div class="flex flex-col lg:flex-row justify-between items-center gap-4 mb-8">
+        <div class="flex flex-wrap gap-3">
+          <button data-category="todos" class="filter-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all border bg-gradient-to-r from-purple-600 to-cyan-500 text-white border-cyan-400/40 shadow-lg shadow-cyan-500/20">Todos</button>
+          <button data-category="eventos" class="filter-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all border bg-slate-900 border-slate-800 text-slate-400 hover:bg-slate-850 hover:text-white">Cultura & Eventos</button>
+          <button data-category="estrutura" class="filter-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all border bg-slate-900 border-slate-800 text-slate-400 hover:bg-slate-850 hover:text-white">Estrutura & Segurança</button>
+          <button data-category="esportes" class="filter-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all border bg-slate-900 border-slate-800 text-slate-400 hover:bg-slate-850 hover:text-white">Esporte & Lazer</button>
+          <button data-category="comunidade" class="filter-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all border bg-slate-900 border-slate-800 text-slate-400 hover:bg-slate-850 hover:text-white">Inclusão & Comunidade</button>
+          <button data-category="educacao" class="filter-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all border bg-slate-900 border-slate-800 text-slate-400 hover:bg-slate-850 hover:text-white">Educação & Oportunidades</button>
+        </div>
+
+        <div class="relative w-full md:w-72">
+          <i data-lucide="search" class="w-4 h-4 absolute left-3 top-1/2 -translate-y-1/2 text-slate-400"></i>
+          <input
+            id="search-input"
+            type="text"
+            placeholder="Buscar proposta..."
+            class="w-full bg-slate-900 border border-slate-800 rounded-xl pl-9 pr-4 py-2 text-sm text-slate-200 placeholder-slate-500 focus:outline-none focus:border-cyan-400 transition-colors"
+          />
+        </div>
+      </div>
+
+      <div id="proposals-grid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+
+      <div id="no-proposals-msg" class="hidden text-center py-16 bg-slate-900/40 rounded-2xl border border-slate-800">
+        <p class="text-slate-400 text-base">Nenhuma proposta encontrada com estes termos.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="membros" class="py-20 bg-slate-950 border-t border-purple-900/20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      <div class="text-center max-w-2xl mx-auto mb-16">
+        <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-purple-500/10 border border-purple-400/30 text-purple-400 text-xs font-semibold mb-3">
+          <i data-lucide="users" class="w-4 h-4"></i>
+          <span>Equipe de Líderes</span>
+        </div>
+        <h2 class="text-3xl sm:text-4xl font-black text-white mb-4">
+          Nosso <span class="text-purple-400">Time</span>
+        </h2>
+        <p class="text-slate-400">
+          Estudantes motivados de diferentes turmas unidos pelo propósito de fazer a diferença.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div class="bg-slate-900/80 rounded-2xl p-6 border border-purple-900/30 hover:border-purple-400/40 transition-all group">
+          <div class="flex items-center space-x-4 mb-4">
+            <img src="https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?auto=format&fit=crop&q=80&w=300" alt="Gabriel Santos" class="w-16 h-16 rounded-2xl object-cover border-2 border-cyan-400/30 group-hover:border-cyan-400 transition-all" />
+            <div>
+              <h3 class="text-lg font-bold text-white group-hover:text-cyan-300 transition-colors">Gabriel Santos</h3>
+              <div class="text-xs font-bold text-purple-400">Presidente</div>
+              <div class="text-xs text-slate-400 mt-0.5">3º Ano A - Ensino Médio</div>
+            </div>
+          </div>
+          <p class="text-slate-300 text-xs italic bg-slate-950 p-3 rounded-xl border border-slate-800">
+            "A Nova Era não é só uma promessa: é a voz da tecnologia, inovação e representatividade na nossa escola."
+          </p>
+        </div>
+
+        <div class="bg-slate-900/80 rounded-2xl p-6 border border-purple-900/30 hover:border-purple-400/40 transition-all group">
+          <div class="flex items-center space-x-4 mb-4">
+            <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&q=80&w=300" alt="Sophia Rossi" class="w-16 h-16 rounded-2xl object-cover border-2 border-cyan-400/30 group-hover:border-cyan-400 transition-all" />
+            <div>
+              <h3 class="text-lg font-bold text-white group-hover:text-cyan-300 transition-colors">Sophia Rossi</h3>
+              <div class="text-xs font-bold text-purple-400">Vice-Presidente</div>
+              <div class="text-xs text-slate-400 mt-0.5">3º Ano B - Ensino Médio</div>
+            </div>
+          </div>
+          <p class="text-slate-300 text-xs italic bg-slate-950 p-3 rounded-xl border border-slate-800">
+            "Queremos uma gestão transparente, moderna e que ouça cada corredor da escola."
+          </p>
+        </div>
+
+        <div class="bg-slate-900/80 rounded-2xl p-6 border border-purple-900/30 hover:border-purple-400/40 transition-all group">
+          <div class="flex items-center space-x-4 mb-4">
+            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=300" alt="Enzo Costa" class="w-16 h-16 rounded-2xl object-cover border-2 border-cyan-400/30 group-hover:border-cyan-400 transition-all" />
+            <div>
+              <h3 class="text-lg font-bold text-white group-hover:text-cyan-300 transition-colors">Enzo Costa</h3>
+              <div class="text-xs font-bold text-purple-400">Secretário Geral</div>
+              <div class="text-xs text-slate-400 mt-0.5">2º Ano A - Ensino Médio</div>
+            </div>
+          </div>
+          <p class="text-slate-300 text-xs italic bg-slate-950 p-3 rounded-xl border border-slate-800">
+            "Organização e prestação de contas em tempo real para toda a comunidade escolar."
+          </p>
+        </div>
+
+        <div class="bg-slate-900/80 rounded-2xl p-6 border border-purple-900/30 hover:border-purple-400/40 transition-all group">
+          <div class="flex items-center space-x-4 mb-4">
+            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=300" alt="Beatriz Mello" class="w-16 h-16 rounded-2xl object-cover border-2 border-cyan-400/30 group-hover:border-cyan-400 transition-all" />
+            <div>
+              <h3 class="text-lg font-bold text-white group-hover:text-cyan-300 transition-colors">Beatriz Mello</h3>
+              <div class="text-xs font-bold text-purple-400">Diretora de Esportes & E-Sports</div>
+              <div class="text-xs text-slate-400 mt-0.5">2º Ano C - Ensino Médio</div>
+            </div>
+          </div>
+          <p class="text-slate-300 text-xs italic bg-slate-950 p-3 rounded-xl border border-slate-800">
+            "Do campo aos e-sports, vamos movimentar a escola e integrar todas as turmas!"
+          </p>
+        </div>
+
+        <div class="bg-slate-900/80 rounded-2xl p-6 border border-purple-900/30 hover:border-purple-400/40 transition-all group">
+          <div class="flex items-center space-x-4 mb-4">
+            <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&q=80&w=300" alt="Lucas Mendes" class="w-16 h-16 rounded-2xl object-cover border-2 border-cyan-400/30 group-hover:border-cyan-400 transition-all" />
+            <div>
+              <h3 class="text-lg font-bold text-white group-hover:text-cyan-300 transition-colors">Lucas Mendes</h3>
+              <div class="text-xs font-bold text-purple-400">Diretor de Comunicação & Mídia</div>
+              <div class="text-xs text-slate-400 mt-0.5">1º Ano B - Ensino Médio</div>
+            </div>
+          </div>
+          <p class="text-slate-300 text-xs italic bg-slate-950 p-3 rounded-xl border border-slate-800">
+            "Informação rápida, redes ativas e transparência digital em cada decisão."
+          </p>
+        </div>
+
+        <div class="bg-slate-900/80 rounded-2xl p-6 border border-purple-900/30 hover:border-purple-400/40 transition-all group">
+          <div class="flex items-center space-x-4 mb-4">
+            <img src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?auto=format&fit=crop&q=80&w=300" alt="Camila Rocha" class="w-16 h-16 rounded-2xl object-cover border-2 border-cyan-400/30 group-hover:border-cyan-400 transition-all" />
+            <div>
+              <h3 class="text-lg font-bold text-white group-hover:text-cyan-300 transition-colors">Camila Rocha</h3>
+              <div class="text-xs font-bold text-purple-400">Diretora de Inclusão & Ação Social</div>
+              <div class="text-xs text-slate-400 mt-0.5">1º Ano C - Ensino Médio</div>
+            </div>
+          </div>
+          <p class="text-slate-300 text-xs italic bg-slate-950 p-3 rounded-xl border border-slate-800">
+            "Toda turma merece sentir acolhimento, respeito e oportunidades iguais."
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="ouvidoria" class="py-20 bg-slate-950 border-t border-purple-900/20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-[1.1fr_0.9fr] gap-10 items-start">
+        <div>
+          <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-amber-500/10 border border-amber-400/30 text-amber-400 text-xs font-semibold mb-4">
+            <i data-lucide="megaphone" class="w-4 h-4"></i>
+            <span>Fala Estudante</span>
+          </div>
+          <h2 class="text-3xl sm:text-4xl font-black text-white mb-4">Sua voz <span class="text-cyan-400">faz parte da mudança</span></h2>
+          <p class="text-slate-400 leading-relaxed mb-8">
+            O Grêmio precisa ser perto da comunidade. Por isso, criamos uma ouvidoria aberta para receber ideias, críticas e sugestões de estudantes, professores e famílias.
+          </p>
+
+          <div class="space-y-4">
+            <div class="flex items-start space-x-3 p-4 rounded-2xl bg-slate-900/70 border border-slate-800">
+              <div class="p-2 rounded-xl bg-emerald-500/10 text-emerald-400">
+                <i data-lucide="shield-check" class="w-5 h-5"></i>
+              </div>
+              <div>
+                <h3 class="font-bold text-white">Canal seguro</h3>
+                <p class="text-sm text-slate-400">Suas mensagens são tratadas com atenção, sigilo e compromisso com a comunidade.</p>
+              </div>
+            </div>
+
+            <div class="flex items-start space-x-3 p-4 rounded-2xl bg-slate-900/70 border border-slate-800">
+              <div class="p-2 rounded-xl bg-pink-500/10 text-pink-400">
+                <i data-lucide="clock-3" class="w-5 h-5"></i>
+              </div>
+              <div>
+                <h3 class="font-bold text-white">Resposta ativa</h3>
+                <p class="text-sm text-slate-400">Vamos responder com foco em ações reais e acompanhamento das demandas da escola.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-slate-900/80 rounded-3xl p-6 border border-purple-900/30 shadow-2xl shadow-cyan-500/10">
+          <form id="ouvidoria-form" class="space-y-5">
+            <div>
+              <label class="block text-xs font-semibold text-slate-300 mb-2">Tipo de Mensagem *</label>
+              <div class="grid grid-cols-2 gap-2">
+                <button type="button" class="type-btn py-2.5 rounded-xl text-xs font-bold transition-all border bg-gradient-to-r from-purple-600 to-cyan-500 border-cyan-400 text-white">Sugestão</button>
+                <button type="button" class="type-btn py-2.5 rounded-xl text-xs font-bold transition-all border bg-slate-950 border-slate-800 text-slate-400 hover:bg-slate-850">Crítica</button>
+                <button type="button" class="type-btn py-2.5 rounded-xl text-xs font-bold transition-all border bg-slate-950 border-slate-800 text-slate-400 hover:bg-slate-850">Elogio</button>
+                <button type="button" class="type-btn py-2.5 rounded-xl text-xs font-bold transition-all border bg-slate-950 border-slate-800 text-slate-400 hover:bg-slate-850">Dúvida</button>
+              </div>
+            </div>
+
+            <div class="flex items-center space-x-3">
+              <input id="anonymous-checkbox" type="checkbox" class="w-4 h-4 accent-cyan-400 rounded" />
+              <label for="anonymous-checkbox" class="text-sm text-slate-300">Enviar anonimamente</label>
+            </div>
+
+            <div id="author-container" class="space-y-5">
+              <div>
+                <label class="block text-xs font-semibold text-slate-300 mb-2">Nome *</label>
+                <input
+                  type="text"
+                  required
+                  placeholder="Seu nome ou apelido"
+                  class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-sm text-slate-200 placeholder-slate-500 focus:outline-none focus:border-cyan-400"
+                />
+              </div>
+
+              <div>
+                <label class="block text-xs font-semibold text-slate-300 mb-2">E-mail *</label>
+                <input
+                  type="email"
+                  required
+                  placeholder="seuemail@escola.com"
+                  class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-sm text-slate-200 placeholder-slate-500 focus:outline-none focus:border-cyan-400"
+                />
+              </div>
+            </div>
+
+            <div>
+              <label class="block text-xs font-semibold text-slate-300 mb-2">Sua Mensagem *</label>
+              <textarea
+                id="message-input"
+                rows="4"
+                required
+                placeholder="Compartilhe suas ideias ou o que precisa ser melhorado na escola..."
+                class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-sm text-slate-200 placeholder-slate-500 focus:outline-none focus:border-cyan-400 resize-none"
+              ></textarea>
+            </div>
+
+            <button
+              type="submit"
+              class="w-full py-4 rounded-xl font-bold bg-gradient-to-r from-purple-600 via-indigo-600 to-cyan-500 hover:opacity-95 text-white shadow-xl shadow-cyan-500/20 transition-all flex items-center justify-center space-x-2 border border-cyan-400/30"
+            >
+              <i data-lucide="send" class="w-5 h-5"></i>
+              <span>Enviar para a Chapa Nova Era</span>
+            </button>
+          </form>
+
+          <div id="ouvidoria-success" class="hidden mt-4 p-4 rounded-2xl border border-emerald-500/30 bg-emerald-500/10 text-emerald-300 text-sm font-medium">
+            Mensagem enviada com sucesso! A Nova Era vai responder em breve.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="cronograma" class="py-20 bg-slate-950 border-t border-purple-900/20">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      <div class="text-center max-w-2xl mx-auto mb-16">
+        <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-400/30 text-emerald-400 text-xs font-semibold mb-3">
+          <i data-lucide="calendar" class="w-4 h-4"></i>
+          <span>Agenda da Campanha</span>
+        </div>
+        <h2 class="text-3xl font-black text-white mb-2">Cronograma de Eventos</h2>
+        <p class="text-slate-400 text-sm">Acompanhe os encontros e momentos decisivos da Nova Era.</p>
+      </div>
+
+      <div class="space-y-4">
+        <div class="flex items-center justify-between p-5 rounded-2xl border bg-slate-900/70 border-slate-800">
+          <div class="flex items-center space-x-4">
+            <div class="p-3 rounded-xl bg-slate-950 text-slate-400">
+              <i data-lucide="calendar" class="w-5 h-5"></i>
+            </div>
+            <div>
+              <h3 class="text-base font-bold text-white">Lançamento Oficial da Plataforma Chapa Nova Era</h3>
+              <span class="text-xs font-semibold text-slate-400">10 de Maio</span>
+            </div>
+          </div>
+          <span class="text-xs px-3 py-1 rounded-full font-bold bg-slate-950 text-slate-400">Concluído</span>
+        </div>
+
+        <div class="flex items-center justify-between p-5 rounded-2xl border bg-slate-900/70 border-slate-800">
+          <div class="flex items-center space-x-4">
+            <div class="p-3 rounded-xl bg-slate-950 text-slate-400">
+              <i data-lucide="calendar" class="w-5 h-5"></i>
+            </div>
+            <div>
+              <h3 class="text-base font-bold text-white">Roda de Conversa Interativa & Podcast ao Vivo no Pátio</h3>
+              <span class="text-xs font-semibold text-slate-400">16 de Maio</span>
+            </div>
+          </div>
+          <span class="text-xs px-3 py-1 rounded-full font-bold bg-cyan-950 text-cyan-300 border border-cyan-500/30">Em Breve</span>
+        </div>
+
+        <div class="flex items-center justify-between p-5 rounded-2xl border bg-slate-900/70 border-slate-800">
+          <div class="flex items-center space-x-4">
+            <div class="p-3 rounded-xl bg-slate-950 text-slate-400">
+              <i data-lucide="calendar" class="w-5 h-5"></i>
+            </div>
+            <div>
+              <h3 class="text-base font-bold text-white">Grande Debate das Chapas no Auditório Principal</h3>
+              <span class="text-xs font-semibold text-slate-400">21 de Maio</span>
+            </div>
+          </div>
+          <span class="text-xs px-3 py-1 rounded-full font-bold bg-cyan-950 text-cyan-300 border border-cyan-500/30">Agendado</span>
+        </div>
+
+        <div class="flex items-center justify-between p-5 rounded-2xl border bg-gradient-to-r from-purple-950/80 to-slate-900 border-cyan-400/60 shadow-lg shadow-cyan-500/10">
+          <div class="flex items-center space-x-4">
+            <div class="p-3 rounded-xl bg-cyan-500 text-slate-950 font-bold">
+              <i data-lucide="calendar" class="w-5 h-5"></i>
+            </div>
+            <div>
+              <h3 class="text-base font-bold text-white">Dia da Votação - Vote Chapa Nova Era!</h3>
+              <span class="text-xs font-semibold text-slate-400">24 de Maio</span>
+            </div>
+          </div>
+          <span class="text-xs px-3 py-1 rounded-full font-bold bg-gradient-to-r from-purple-600 to-cyan-500 text-white animate-pulse">Destaque</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="bg-slate-950 border-t border-purple-900/40 py-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+
+        <div class="flex items-center space-x-3">
+          <div class="w-8 h-8 rounded-lg bg-gradient-to-tr from-purple-600 to-cyan-400 flex items-center justify-center">
+            <i data-lucide="zap" class="w-5 h-5 text-white"></i>
+          </div>
+          <span class="text-lg font-black text-white tracking-wider">CHAPA NOVA ERA</span>
+        </div>
+
+        <p class="text-xs text-slate-500 text-center">
+          © 2026 Chapa Nova Era. Movimento Estudantil por uma escola conectada com o amanhã.
+        </p>
+
+        <div class="flex items-center space-x-4 text-slate-400">
+          <a href="https://instagram.com" target="_blank" rel="noreferrer" class="hover:text-cyan-400 transition-colors">
+            <i data-lucide="instagram" class="w-5 h-5"></i>
+          </a>
+          <a href="https://twitter.com" target="_blank" rel="noreferrer" class="hover:text-cyan-400 transition-colors">
+            <i data-lucide="twitter" class="w-5 h-5"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const proposals = [
+      {
+        id: 1,
+        title: "Gincanas no encerramento dos trimestres",
+        category: "eventos",
+        description: "Organizar gincanas para celebrar o fim de cada trimestre, promovendo integração e diversão entre as turmas.",
+        icon: "party-popper",
+        iconColor: "text-cyan-400",
+        tag: "Cultura & Eventos"
+      },
+      {
+        id: 2,
+        title: "Melhorias nas trancas dos banheiros",
+        category: "estrutura",
+        description: "Buscar, junto à direção, a instalação de trancas mais resistentes e seguras nos banheiros da escola.",
+        icon: "lock-keyhole",
+        iconColor: "text-blue-400",
+        tag: "Estrutura & Segurança"
+      },
+      {
+        id: 3,
+        title: "Campanhas solidárias",
+        category: "comunidade",
+        description: "Promover campanhas de arrecadação de alimentos, agasalhos e outros itens para ajudar quem precisa.",
+        icon: "heart-handshake",
+        iconColor: "text-pink-400",
+        tag: "Inclusão & Comunidade"
+      },
+      {
+        id: 4,
+        title: "Novos equipamentos para Educação Física",
+        category: "esportes",
+        description: "Buscar novos materiais e equipamentos para apoiar as aulas de Educação Física e as atividades esportivas.",
+        icon: "trophy",
+        iconColor: "text-purple-400",
+        tag: "Esporte & Lazer"
+      },
+      {
+        id: 5,
+        title: "Show de talentos",
+        category: "eventos",
+        description: "Criar um espaço para estudantes apresentarem seus talentos artísticos, culturais e criativos.",
+        icon: "mic-2",
+        iconColor: "text-cyan-400",
+        tag: "Cultura & Eventos"
+      },
+      {
+        id: 6,
+        title: "Mais segurança nos muros da escola",
+        category: "estrutura",
+        description: "Dialogar com a direção sobre medidas de segurança nos muros, incluindo a instalação de cerca elétrica onde for adequada e autorizada.",
+        icon: "shield-check",
+        iconColor: "text-blue-400",
+        tag: "Estrutura & Segurança"
+      },
+      {
+        id: 7,
+        title: "Campanhas contra o bullying",
+        category: "comunidade",
+        description: "Realizar ações de conscientização e incentivo ao respeito, à empatia e à convivência sem bullying.",
+        icon: "heart",
+        iconColor: "text-pink-400",
+        tag: "Inclusão & Comunidade"
+      },
+      {
+        id: 8,
+        title: "Feira de empreendedorismo",
+        category: "educacao",
+        description: "Organizar uma feira para estudantes apresentarem ideias, projetos e iniciativas empreendedoras.",
+        icon: "lightbulb",
+        iconColor: "text-amber-400",
+        tag: "Educação & Oportunidades"
+      },
+      {
+        id: 9,
+        title: "Palestras sobre diversos assuntos",
+        category: "educacao",
+        description: "Promover palestras sobre temas de interesse dos estudantes, com convidados e profissionais de diferentes áreas.",
+        icon: "presentation",
+        iconColor: "text-amber-400",
+        tag: "Educação & Oportunidades"
+      },
+      {
+        id: 10,
+        title: "Passeio como reconhecimento pelo desempenho da turma",
+        category: "educacao",
+        description: "Propor um passeio para a turma com melhor desempenho nas atividades, nos trabalhos e nas notas, com critérios combinados com a escola.",
+        icon: "bus",
+        iconColor: "text-amber-400",
+        tag: "Educação & Oportunidades"
+      },
+      {
+        id: 11,
+        title: "Parcerias para melhorar a escola",
+        category: "estrutura",
+        description: "Buscar parcerias que possam contribuir com melhorias para a escola e com as necessidades dos estudantes.",
+        icon: "handshake",
+        iconColor: "text-blue-400",
+        tag: "Estrutura & Segurança"
+      }
+    ];
+
+    let currentCategory = 'todos';
+    let searchQuery = '';
+
+    const proposalsGrid = document.getElementById('proposals-grid');
+    const noProposalsMsg = document.getElementById('no-proposals-msg');
+    const searchInput = document.getElementById('search-input');
+    const filterButtons = document.querySelectorAll('.filter-btn');
+
+    function renderProposals() {
+      const filtered = proposals.filter(p => {
+        const matchesCat = currentCategory === 'todos' || p.category === currentCategory;
+        const matchesSearch = p.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+          p.description.toLowerCase().includes(searchQuery.toLowerCase());
+        return matchesCat && matchesSearch;
+      });
+
+      if (filtered.length === 0) {
+        proposalsGrid.innerHTML = '';
+        noProposalsMsg.classList.remove('hidden');
+      } else {
+        noProposalsMsg.classList.add('hidden');
+        proposalsGrid.innerHTML = filtered.map(prop => `
+          <div class="p-6 rounded-2xl bg-slate-900/90 border border-purple-900/30 hover:border-cyan-400/40 transition-all hover:-translate-y-1 group flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between mb-4">
+                <div class="p-3 rounded-xl bg-slate-950 border border-slate-800 group-hover:scale-110 transition-transform">
+                  <i data-lucide="${prop.icon}" class="w-6 h-6 ${prop.iconColor}"></i>
+                </div>
+                <span class="text-xs font-semibold px-2.5 py-1 rounded-full bg-slate-950 text-cyan-300 border border-slate-800">
+                  ${prop.tag}
+                </span>
+              </div>
+
+              <h3 class="text-lg font-bold text-white mb-2 group-hover:text-cyan-300 transition-colors">
+                ${prop.title}
+              </h3>
+
+              <p class="text-slate-400 text-sm leading-relaxed mb-6">
+                ${prop.description}
+              </p>
+            </div>
+
+            <div class="flex items-center text-xs font-semibold text-cyan-400 space-x-1.5 pt-4 border-t border-slate-800/60">
+              <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-400"></i>
+              <span>Compromisso Nova Era</span>
+            </div>
+          </div>
+        `).join('');
+      }
+
+      lucide.createIcons();
+    }
+
+    filterButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterButtons.forEach(b => {
+          b.className = "filter-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all border bg-slate-900 border-slate-800 text-slate-400 hover:bg-slate-850 hover:text-white";
+        });
+        btn.className = "filter-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all border bg-gradient-to-r from-purple-600 to-cyan-500 text-white border-cyan-400/40 shadow-lg shadow-cyan-500/20";
+
+        currentCategory = btn.getAttribute('data-category');
+        renderProposals();
+      });
+    });
+
+    searchInput.addEventListener('input', (e) => {
+      searchQuery = e.target.value;
+      renderProposals();
+    });
+
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const menuIconOpen = document.getElementById('menu-icon-open');
+    const menuIconClose = document.getElementById('menu-icon-close');
+    const mobileLinks = document.querySelectorAll('.mobile-link');
+
+    mobileMenuBtn.addEventListener('click', () => {
+      const isHidden = mobileMenu.classList.contains('hidden');
+      if (isHidden) {
+        mobileMenu.classList.remove('hidden');
+        menuIconOpen.classList.add('hidden');
+        menuIconClose.classList.remove('hidden');
+      } else {
+        mobileMenu.classList.add('hidden');
+        menuIconOpen.classList.remove('hidden');
+        menuIconClose.classList.add('hidden');
+      }
+    });
+
+    mobileLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+        menuIconOpen.classList.remove('hidden');
+        menuIconClose.classList.add('hidden');
+      });
+    });
+
+    const anonCheckbox = document.getElementById('anonymous-checkbox');
+    const authorContainer = document.getElementById('author-container');
+    const ouvidoriaForm = document.getElementById('ouvidoria-form');
+    const ouvidoriaSuccess = document.getElementById('ouvidoria-success');
+    const typeButtons = document.querySelectorAll('.type-btn');
+
+    anonCheckbox.addEventListener('change', (e) => {
+      if (e.target.checked) {
+        authorContainer.classList.add('hidden');
+      } else {
+        authorContainer.classList.remove('hidden');
+      }
+    });
+
+    typeButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        typeButtons.forEach(b => {
+          b.className = "type-btn py-2.5 rounded-xl text-xs font-bold transition-all border bg-slate-950 border-slate-800 text-slate-400 hover:bg-slate-850";
+        });
+        btn.className = "type-btn py-2.5 rounded-xl text-xs font-bold transition-all border bg-gradient-to-r from-purple-600 to-cyan-500 border-cyan-400 text-white";
+      });
+    });
+
+    ouvidoriaForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      ouvidoriaForm.classList.add('hidden');
+      ouvidoriaSuccess.classList.remove('hidden');
+
+      setTimeout(() => {
+        ouvidoriaForm.reset();
+        authorContainer.classList.remove('hidden');
+        ouvidoriaForm.classList.remove('hidden');
+        ouvidoriaSuccess.classList.add('hidden');
+      }, 4000);
+    });
+
+    window.addEventListener('DOMContentLoaded', () => {
+      renderProposals();
+      lucide.createIcons();
+    });
+  </script>
+</body>
+</html>
